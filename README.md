@@ -60,4 +60,34 @@ HTML, CSS, Javascript 등을 화면에 그래픽 형태로 출력하는 것
 * 웹 페이지의 리소스를 최초에 모두 받아오고 새로운 페이지 구동시에 필요한 부분만 갱신하는 방식
 * 장단점: 초기 구동 속도가 느린 대신 이후 작동 속도가 빠르다
 
+### 자바스크립트의 Data Type 7가지
+* Primitive Data Type: Number, String, Boolean, Null, Undefined, Symbol
+* Object Data Type: Object
+* Symbol은 새로 추가된 것으로 유일한 식별자를 생성할 때 사용
 
+### Hoisting & Closure
+* Hoisting: 변수나 함수 선언을 프로그램의 가장 상단으로 올려주어 실행이 선언보다 먼저 위치하더라도 정상 작동하도록 하는 것
+* Closure: 외부함수와 내부함수가 있을 때 외부함수 실행이 종료되어도 내부함수에서 외부 함수의 값에 접근 할 수 있는 것
+
+### Lexical Scoping & Dynamic Scoping
+* Lexical Scoping: 함수의 선언에 따라 scope가 결정 되는 것
+* Dynamic Scoping: 함수의 호출에 따라 scope가 결정 되는 것
+
+### Execution Context
+* 실행가능한 코드를 형상화하고 구분하는 추상적인 개념
+* 실행 루틴을 stack 형태로 형상화 한 것
+
+### this, call, apply, bind
+* this는 호출하는 주체를 의미
+* call, apply, bind는 Function.Prototype으로 부터 물려받은 method로 모든 함수에서 실행 가능한 method이다
+* call, apply, bind를 통해 함수가 실행되어지는 this를 선택, 변경 할 수 있다
+* bind는 호출하지 않고 this만 변경
+* call, apply는 호출, 둘의 매개변수 받는 형식이 살짝 다름
+
+### ES6
+* ECMA Script 6 는 자바스크립트 표준
+* Babel = Transpiler
+* 브라우저에서 최신 ES6 문법을 지원하지 않을 때 이전 버전의 문법으로 transpile 해주는 babel을 이용하여 호환 되도록 할 수 있다
+ES6 에서 추가된 스펙에 대해 아는대로 다 말해달라(let, const, rest parameter, class, arrow function...)
+var 와 let, const의 가장 큰 차이점은 무엇인가 (function scope와 block scope의 개념에서)
+Class 는 무엇이고, Prototype, fucntion의 ES5 스펙만으로 Class를 구현할수 있는가
