@@ -88,7 +88,7 @@ HTML, CSS, Javascript 등을 화면에 그래픽 형태로 출력하는 것
 * ECMA Script 6 는 자바스크립트 표준
 * Babel = Transpiler
 * 브라우저에서 최신 ES6 문법을 지원하지 않을 때 이전 버전의 문법으로 transpile 해주는 babel을 이용하여 호환 되도록 할 수 있다
-ES6 에서 추가된 스펙에 대해 아는대로 다 말해달라(let, const, rest parameter, class, arrow function...)
+* ES6 새롭게 추가된 것 (let, const, rest parameter, class, arrow function...):
 var 와 let, const의 가장 큰 차이점은 무엇인가 (function scope와 block scope의 개념에서)
 Class 는 무엇이고, Prototype, fucntion의 ES5 스펙만으로 Class를 구현할수 있는가
-  asdf
+ 
