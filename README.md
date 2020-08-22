@@ -17,7 +17,7 @@ HTML, CSS, Javascript 등을 화면에 그래픽 형태로 출력하는 것
 5. Rendering Tree를 이용하여 브라우저에 그래픽으로 출력
 
 ### OOP
-* 프로그래밍을 객체화 하는 것으로 상태와 행위를 가진 객체를의 상호작용을 통하여 프로그래밍하는 방법
+* 프로그래밍을 객체화하여, 상태와 행위를 가진 객체들의 상호작용을 통하여 프로그래밍하는 방법
 * Class: 객체의 상태와 행위 등 형태를 정의하는 것
 * Object: Class의 속성을 가진 존재
 * Method: 객체의 속성을 조작 또는 객체를 사용
@@ -89,7 +89,10 @@ HTML, CSS, Javascript 등을 화면에 그래픽 형태로 출력하는 것
 * Babel = Transpiler
 * 브라우저에서 최신 ES6 문법을 지원하지 않을 때 이전 버전의 문법으로 transpile 해주는 babel을 이용하여 호환 되도록 할 수 있다
 * ES6 새롭게 추가된 것 (let, const, rest parameter, class, arrow function...)
-  * let & const: let
-var 와 let, const의 가장 큰 차이점은 무엇인가 (function scope와 block scope의 개념에서)
-Class 는 무엇이고, Prototype, fucntion의 ES5 스펙만으로 Class를 구현할수 있는가
+  * let & const: let은 mutable하여 재선언, 재할당이 가능하지만, const로 선언된 변수는 immutable하여 재선언, 재할당이 불가능하다는 차이점이 있다
+  * var와 let, const의 차이: var는 function scope를 가지고 있고 hoisting되고 let, const는 block scope를 가지고 있고 hoisting되지 않는다
+  * rest parameter: ...을 변수 앞에 붙여서 parameter로 전달된 매개변수들을 배열 형태로 전달 받는다
+  * class: 객체 형태의 함수
+  * arrow function: 일반함수보다 간결하고, 자신을 포함하는 외부 scope로 부터 this 받아온다
+
  
