@@ -95,4 +95,5 @@ HTML, CSS, Javascript 등을 화면에 그래픽 형태로 출력하는 것
   * class: 객체 형태의 함수
   * arrow function: 일반함수보다 간결하고, 자신을 포함하는 외부 scope로 부터 this 받아온다
 
+ ### RESTful API
  
