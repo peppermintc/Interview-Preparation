@@ -98,13 +98,14 @@ HTML, CSS, Javascript 등을 화면에 그래픽 형태로 출력하는 것
  ### RESTful API
  * URI로 자원을 나타내고 HTTP Method(GET, POST, PUT, DELET)로 CRUD(Create, Read, Use, Delete) 작업을 수행하는 방식으로 구현된 API
  
- ### 클라이언트 개발시 보안 관련 이슈
+ ### 보안, HTTP 통신
  * 개발자 도구 콘솔로 인한 보안의 위협
  * xss(Cross site scripting) 게시판 등에 자바스크립트 코드를 삽입해 정상적인 작동이 아닌 작동을 수행하도록 하는 것
  * xss를 찾아내서 해당 response를 필터링하는 xss 보호 방법이 있음
  * Wireshark는 네트워크 패킷을 분석하는 프로그램
  * HTTP 통신은 서버와 클라이언트 간의 데이터 전송 프로토콜
- * HTTP 통신의 문제점: 
-HTTP 통신의 문제점에 대해서 아는대로 말해달라
+ * HTTP 통신의 문제점: 정보를 주고 받는 경우 정보 유출의 위험
+ * HTTPS는 SSL(TLS)라는 전송시 보안 프로토콜이 추가되어 더 안전 (HTTPS는 SEO 측면에서 더 좋기 때문에 더 많이 사용되어짐)
+
 CORS(Cross-Origin Resource Sharing)는 무엇인가 왜 이러한 방법이 정의 되었으며, 본인이 코드를 작성하면서 CORS와 관련하여서 경험하였던 이슈는 무엇인가
 간단한 데이터를 클라이언트로만 관리 할수 있는가, 이와 관련해서 브라우저 에서 어떠한 것들을 지원하고 있는가, 예를 들면 소셜 로그인같은 것들에 대한 브라우저 종료시 발생하는 문제에 대응 경험이 있는가
