@@ -96,4 +96,4 @@ HTML, CSS, Javascript 등을 화면에 그래픽 형태로 출력하는 것
   * arrow function: 일반함수보다 간결하고, 자신을 포함하는 외부 scope로 부터 this 받아온다
 
  ### RESTful API
- 
+ * URI로 자원을 나타내고 HTTP Method(GET, POST, PUT, DELET)로 CRUD(Create, Read, Use, Delete) 작업을 수행하는 방식으로 구현된 API
