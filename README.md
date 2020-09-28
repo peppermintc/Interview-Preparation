@@ -20,6 +20,8 @@ HTML, CSS, Javascript 등을 화면에 그래픽 형태로 출력하는 것
 4. Viewport에 따른 layout 계산하고
 5. Rendering Tree를 이용하여 브라우저에 그래픽으로 출력한다
 
+참고 링크 : https://d2.naver.com/helloworld/59361
+
 ### OOP
 
 - 프로그래밍을 객체화하여, 상태와 행위를 가진 객체들의 상호작용을 통하여 프로그래밍하는 방법
@@ -78,13 +80,24 @@ HTML, CSS, Javascript 등을 화면에 그래픽 형태로 출력하는 것
 
 ### Hoisting & Closure
 
-- Hoisting: 변수나 함수 선언을 프로그램의 가장 상단으로 올려주어 실행이 선언보다 먼저 위치하더라도 정상 작동하도록 하는 것
-- Closure: 외부함수와 내부함수가 있을 때 외부함수 실행이 종료되어도 내부함수에서 외부 함수의 값에 접근 할 수 있는 것
+- Hoisting:
+  변수나 함수 선언을 코드의 가장 상단으로 올려주어 실행이 선언보다 먼저 위치하더라도 정상 작동하도록 하는 것
+  실제로 코드가 끌어올려지는 것은 아니나 자바스크립트 파서가 내부적으로 끌어올려 파싱함
+  변수에 할당한 함수 표현식은 호이스팅 적용되지 않음
+  예) var myFuc = function() { console.log('Hello'); } // 호이스팅 적용 X
+  변수가 함수보다 더 높게 호이스팅된다
+
+- Closure:
+  Lexical Scope인 자바스크립트는 함수가 선언되어질 때 Scope가 정해지므로 외부함수와 내부함수가 있을 때 외부함수가 선언될때 외부함수의 변수를 참조했다면 외부함수의 실행이 종료되어도 내부함수에서 외부 함수의 값에 접근 할 수 있는 것
+  클로저를 사용하면 변수를 private하게 은닉하여 외부에서 변수에 접근 할 수 없게 할 수 있다
+  클로저를 생성해놓고 참조를 제거하지 않으면 메모리가 들기 때문에 클로저 사용이 끝나면 참조를 제거하는 것이 좋다
+  클로저에 대한 좋은 설명 사용 예 : https://hyunseob.github.io/2016/08/30/javascript-closure/
 
 ### Lexical Scoping & Dynamic Scoping
 
 - Lexical Scoping: 함수의 선언에 따라 scope가 결정 되는 것
 - Dynamic Scoping: 함수의 호출에 따라 scope가 결정 되는 것
+  자바스크립트는 Lexical Scoping
 
 ### Execution Context
 
@@ -131,3 +144,14 @@ CORS(Cross-Origin Resource Sharing)는 무엇인가 왜 이러한 방법이 정�
 간단한 데이터를 클라이언트로만 관리 할수 있는가,
 이와 관련해서 브라우저 에서 어떠한 것들을 지원하고 있는가,
 예를 들면 소셜 로그인같은 것들에 대한 브라우저 종료시 발 생하는 문제에 대응 경험이 있는가
+
+### HTTP
+
+서버와 클라이언트의 데이터 전송 프로토콜 (request, response로 데이터 전송)
+
+### GET & POST
+
+GET과 POST 메소드는 HTTP 메소드 중 가장 많이 사용됨
+
+- GET 은 특정 리소스로부터 Data를 Request 할 때 사용
+- POST 는 서버로 Data를 보내 Create, Update 할 때 사용
