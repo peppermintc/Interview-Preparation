@@ -194,5 +194,43 @@ GET과 POST 메소드는 HTTP 메소드 중 가장 많이 사용됨
 
 - 크롬은 자바스크립트 엔진으로 V8 엔진, 렌더링 엔진으로 WebKit을 사용한다.
 - 자바스크립트는 싱글 스레드 언어로 한번에 하나의 작업만 처리한다.
-- 자바스크립트 엔진은 3개의 영역으로 나누어질 수 있다 ( Call Stack, Event Queue(Task Queue), Heap )
-- Call Stack은 프로그램에서 현재의 위치를 기록하는 데이터 구조로 함수를 호출하면 stack의 위에 쌓이고(push) 결과값을 반환하면 스택에서 제거된다(pop)
+- 자바스크립트 엔진은 2개의 영역으로 나누어질 수 있다 ( Call Stack, Memory Heap ) / Event Queue(Task Queue) 는 브라우저 내부의 다른 영역이고 자바스크립트 V8 안에 존재하지는 않는다
+- Call Stack은 프로그램에서 실행 중인 코드를 트래킹하는 데이터 구조로 함수를 호출하면 stack의 위에 쌓이고(push) 결과값을 반환하면 스택에서 제거된다(pop)
+- Memory Heap은 동적으로 생성된 객체(변수, 함수)가 메모리에 할당되는 곳이다
+- 자바스크립트는 하나의 Call Stack만을 가지고 있는데 이것의 문제점은 함수가 실행될 때 다른 함수를 실행 할 수 없다는 것인데 이것을 해결하기 위해 나중에 실행하는 Callback 함수를 사용한다. 비동기 Callback은 Call Stack에 바로 쌓이지 않고 Event Queue에 저장되었다가 Call stack이 비었을 때 실행된다.
+- Event Queue는 Callback Event Queue라고도 불린다.
+- Event Loop는 Call Stack과 Callback Event Queue의 상태를 확인하면서 Call Stack이 비면 Event Queue에서 하나씩 꺼내서 동작시키는 Loop이다. (Callback을 꺼내 동작시키는 것을 tick이라고 한다)
+- Event Loop를 통해서 동시성(Concurrency)을 지원한다. (Event Loop는 브라우저의 구성요소 중 하나인 것 같다)
+- Call Stack의 한정된 자원 용량이 넘치는 것을 Stack Overflow라고 한다
+- Call Stack에 쌓인 작업들 중 시간이 오래 걸리는 작업은 완료 될 때까지 기다려야하는데 이를 Blocking이라고 한다
+- javascript가 싱글 스레드임에도 웹사이트를 끊김 없이 사용 할 수 있는 이유는 asynchronous callback을 사용하기 때문
+- setTimeout은 callstack에서 쌓엿다가 실행되면서 pop되고 Web APIs에서 timer 실행이 완료된 후 callback queue에 적재되고 call stack이 비었다면 event loop를 통해 call stack으로 tick 되어서 setTimeout 내부에 작성하였던 동작이 실행된다 (AJAX나 DOM 이벤트도 동일하게 Web API로 보내져서 작동한다)
+
+### 가비지 컬렉터 (GC)
+
+- 프로그램에서 동적으로 할당되었던 메모리 중 필요없어진 영역을 할당 해제시키는 기능
+- 객체를 참조하는 대상이 하나도 없을 경우 가비지 컬렉션 대상으로 여기고 메모리에서 해제시킨다
+- 클로저를 만들고 메모리 해제를 하지 않으면 메모리 누수 발생 (null 할당으로 해제 시킨다)
+
+### Web Worker (웹 워커)
+
+- 자바스크립트는 single thread로 동작하지만 web worker를 사용하면 multi thread를 활용 할 수 있다
+- 시간이 오래 걸리는 연산 작업이 있을 경우 web worker에게 작업을 맡기고 메인 thread는 다른 작업을 수행하다가 web worker의 작업이 끝나면 DOM Update를 해주면 ui 클릭과 같은 동작을 연산 수행 중 할 수 있게 된다.
+- web worker는 직접 DOM에 접근 할 수 없기 때문에 메인 thread와 메시를 주고 받아 통신한다
+- CPU가 코어가 여러개여야 Web worker를 사용 할 수 있다
+- 빅데이터 처리, 게임 개발 시에 사용 효과가 좋다
+
+### Service Worker (서비스 워커)
+
+- 주기적 백그라운드 동기화 및 푸시 알림 등 오프라인 웹 경험을 향상시킨다
+- 브라우저가 백그라운드에서 실행시킨다
+- 개발 중에 localhost를 사용 할 수 있지만 배포시 HTTPS에서만 등록되어 작동한다. HTTP에서는 작동하지 않는다
+- PWA 개발 시에 사용
+
+### Web APIs
+
+- setTimeOut
+- DOM Event 예: document.querySelector('button')와 같은 DOM 조작 이벤트
+- AJAX
+- 스크롤 같은 이벤트는 작은 동작에도 쉽게 발생하는데 이와 같은 이벤트가 너무 많이 callback queue에 쌓이게 되면 프로그램 성능에 영향을 주기 때문에 디바운싱(deboucing)을 통해서 이벤트가 큐에 쌓이는 속도를 느리게 조절하여 개선 할 수 있다
+- 자바스크립트가 싱글 스레드임에도 멀티 스레드 처럼 작동 할 수 있는 이유 브라우저에 Web APIs와 Callback Event Queue가 있기 때문
