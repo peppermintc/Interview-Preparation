@@ -268,6 +268,8 @@ GET과 POST 메소드는 HTTP 메소드 중 가장 많이 사용됨
 ### CSS Preprocessor
 
 - 규모가 커져서 CSS를 관리하기 어려울 경우 CSS Preprocessor를 많이 사용한다 (Sass, Less, SCSS 등)
+- CSS 전처리기를 사용하면 nesting이나 반복문 등 간단한 연산을 사용 할 수 있다는 장점이 있다
+- 웹에서는 CSS만 동작하기 때문에 CSS로 바꿔주는 컴파일 과정을 거쳐야 한다
 
 ### use strict
 
@@ -312,3 +314,37 @@ GET과 POST 메소드는 HTTP 메소드 중 가장 많이 사용됨
 ### Semantic 태그
 
 - 자신의 역할이나 의미를 개발자나 브라우저에게 표시하는 태그
+
+### Box Model
+
+- Content, padding, Border, Margin을 그림으로 나타낸 것
+
+### Flexbox
+
+- 레이아웃을 편하게 잡기 위한 CSS 속성
+- 컨테이너와 아이템 구성으로 레이아웃을 지정한다
+
+### ES6
+
+- ES6에서 바뀐 것 Template Literal, Spread Operator, 화살표 함수, Class
+
+### Babel
+
+- 버전이 다른 자바스크립트 표준을 transpile 해준다
+
+### Array & Linked List
+
+- Array는 Random Access를 지원, Linked List는 Sequential Access를 지원
+- 배열은 stack, linked list는 heap 영역에 저장된다
+
+### Stack & Queue
+
+- Stack LILO, Queue FIFO
+
+### Binary Search Tree
+
+- 이진 트리와 연결리스트의 결합으로 왼쪽에서부터 가장 작은 숫자로 정렬되어있다
+
+### Priority Queue
+
+- 우선순위가 부여되어 높은 우선순위를 가진 요소가 먼저 처리됨
