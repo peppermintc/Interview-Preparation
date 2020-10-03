@@ -158,6 +158,10 @@ HTML, CSS, Javascript 등을 화면에 그래픽 형태로 출력하는 것
 ### CORS
 
 - CORS(Cross-Origin Resource Sharing)는 서버에서 외부의 요청을 허용 할 경우 외부 도메인으로 AJAX 요청을 가능하게 하는 정책
+- 다른 도메인에 리소스를 요청 할 경우 Cross Origin HTTP를 이용한다.
+- 대부분의 브라우저들은 보안의 이유로 Cross Origin HTTP 요청을 제한한다. 이것을 Same Origin Policy라고 한다.
+- Same Origin Policy에 따르면 프로토콜과 PORT가 같아야 한다.
+- Cross Origin HTTP 헤더를 추가하여 타도메인간의 Cross Origin Resource Sharing을 허용 할 수 있다
 
 ### HTTP
 
@@ -176,7 +180,7 @@ GET과 POST 메소드는 HTTP 메소드 중 가장 많이 사용됨
 ### 브라우저 저장소
 
 - Web Storage는 문자열 뿐만 아니라 객체도 저장 가능하고, 클라이언트에서 서버로 보내는 모든 웹 요청에 함께 전송되는 쿠키와는 다르게 요청과 함께 보내지지 않아 네트워크 트래픽을 줄여준다. (Key, Value 형태로 저장)
-- 쿠키는 개수와 용량 제한이 있다 Web Storage는 제한이 없다.
+- 쿠키는 개수와 용량 제한(4KB)이 있다 Web Storage는 제한이 없다.
 - 쿠키는 만료일자를 지정 하는데 지정하지 않으면 세션쿠키가 된다.
 - 영구 쿠키를 저장하려면 만료일자를 굉장히 길게 설정해야하고 Web Storage는 만료일자가 없이 영구적으로 저장된다.
 - Web Storage 와 Cookie 모두 도메인 단위로 접근이 제한된다. 다른 도메인에서 저장된 데이터를 엑세스 할 수 없다.
@@ -188,6 +192,8 @@ GET과 POST 메소드는 HTTP 메소드 중 가장 많이 사용됨
 - Script 태그를 html body 태그의 맨 아래에 위치 시키는 것을 권장하는 이유는 DOM 트리 생성이 완료된 후 DOM 조작을 하기 위함이다. DOM 트리 생성이 완료되지 않았는데 DOM을 조작 할 시 오류가 발생 할 수 있다.
 - Script 태그를 상단에 위치하여도 defer속성을 이용하면 html 구문 분석 후 DOM 트리 구축이 완료된 후에 script 태그를 실행한다
 - async 속성은 스크립트를 다운로드 하는 중에도 html 구문 분석을 할 수 있도록 해준다
+- defer나 async를 이용하거나 body 태그의 맨 하단으로 script 태그를 위치시키는 것으로 빈화면 로딩 시간을 줄여 줄 수 있다.
+- defer 와 async은 둘 다 비동기 적으로 script를 다운 받을 동안 동시에 html 파싱을 하게 된다. 차이점은 async는 다운로드 완료후 html 파싱을 멈추고 script를 실행하는 반면 defer는 script 다운이 완료되었더라도 html 파싱 완료를 기다린 후 script 실행을 한다.
 
 ### Javascript 엔진
 
@@ -272,3 +278,37 @@ GET과 POST 메소드는 HTTP 메소드 중 가장 많이 사용됨
 - Model, View, Controller
 - model은 데이터를 가지고 있고 controller는 모델로부터 데이터를 가져와서 view를 통해 화면에 표시한다
 - 각각 독립된 역할들만 수행하게 하여 유지보수에도 유리한 코드로 개발 할 수 있다
+
+### Cross Browsing
+
+- 웹페이지를 개발 할 때 모든 브라우저에서 호환되도록 하는 것
+
+### Progressive Rendering
+
+- 페이지 구성 요소의 표시 순서 우선 순위를 정한다.
+- Lazy Loading : 자바스크립트를 이용하여 사용자가 스크롤 시에 필요한 부분을 로드
+
+### 다국어 페이지 제공 방식
+
+- SSR의 경우 클라이언트에서 서버로 HTTP를 보낼 때 Accepted-Language 헤더를 통하여 기본언어 설정 정보 보냄, 서버는 이 정보로 클라이언트에 해당 언어로 보내줌
+- CSR는 해당 브라우저의 언어 설정을 가져와서 보여줌
+
+### SEO
+
+- 검색엔진이 자료를 수집하고 순위를 매기는 방식에 맞게 웹페이지를 구성하여 검색 시 상단에 보여지도록 하는 것
+- SPA의 경우 CSR이기 때문에 SEO에서 불리 할 수 있음
+
+### section과 article 태그 차이
+
+- section은 비슷한 특성의 컨텐츠를 담는 구역을 설정
+- article은 서로 관련이 없고 독립적인 내용을 담을 때 사용
+
+### HTML5 태그
+
+- <!DOCTYPE html> 브라우저에게 문서 형식을 알려준다
+- 필수 태그 html head body
+- meta 태그는 검색 엔진이 읽을 수 있는 태그이며 문서 설명에도 사용된다. 화면에 표시되어지는 것은 없다
+
+### Semantic 태그
+
+- 자신의 역할이나 의미를 개발자나 브라우저에게 표시하는 태그
