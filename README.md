@@ -361,6 +361,8 @@ GET과 POST 메소드는 HTTP 메소드 중 가장 많이 사용됨
 ### 프론트엔드 개발자에게 중요한 것
 ### 라이브러리 선택시 고려할것들
 ### 번들러란
-### 배포 할 때 번들러를 사용하지 않는 이유
+https://wormwlrm.github.io/2020/08/12/History-of-JavaScript-Modules-and-Bundlers.html
+### 더이상 번들러를 사용하지 않는 이유
+https://d2.naver.com/helloworld/4268738
 ### 이벤트 캡쳐링 사용방법
 ### 이벤트 버블링 멈추는 
