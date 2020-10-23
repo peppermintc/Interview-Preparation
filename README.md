@@ -364,6 +364,13 @@ GET과 POST 메소드는 HTTP 메소드 중 가장 많이 사용됨
 - div는 최대한 컨텐츠를 그룹화하는 용도로 사용하고 시멘틱 태크를 이용하려 노력하여 Semantic Web을 만들려고 하는 것이 좋다
 
 ### 프론트엔드 개발자에게 중요한 것
+- 개발 스킬, 미적 감각, 툴과 기술에 대한 이해
+- HTML, CSS
+- Content Management System -> Content Management Application(내용 관리 애플리케이션), Content Dispatch Application(내용 배포 애플리케이션)
+- CMA: HTML에 들어갈 내용 관리 (변경, 제거 등)
+- CDA: 웹 사이트의 모든 수치를 보고 편집할 수 있는 정보편집 프로그램 ex)형식 관리, 계정 제어, 데이터 색인,탐색, 키워드 컴색
+- 유의해야하는 점: 접근성(이용자 친화적으로 각 기기에서 최적화되어진 동적인 사이트 개발을 고려), 검색 엔진 최적화에 대한 고려
+
 ### 라이브러리 선택시 고려할것들
 ### 번들러란
 https://wormwlrm.github.io/2020/08/12/History-of-JavaScript-Modules-and-Bundlers.html
