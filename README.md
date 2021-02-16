@@ -393,3 +393,7 @@ https://d2.naver.com/helloworld/4268738
 ### Typescript
 - Typescript는 정적 타입 언어로 동적 타입 언어인 JavaScript보다 더 높은 안정성을 가진 언어
 - 안정성이 확보되면 자바스크립트로 트랜스파일 
+
+### Execution Context
+- 자바스크립트 코드가 실행되는 환경을 의미
+- 2가지 타입의 Execution Context: 1. Global Execution Context 2. Function Execution Context
