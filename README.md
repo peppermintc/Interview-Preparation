@@ -389,3 +389,7 @@ https://d2.naver.com/helloworld/4268738
 ### 이벤트 버블링 멈추는 
 ### 웹표준이 중요한 이유
 ### Github pages가 웹호스팅을 하는 방법
+
+### Typescript
+- Typescript는 정적 타입 언어로 동적 타입 언어인 JavaScript보다 더 높은 안정성을 가진 언어
+- 안정성이 확보되면 자바스크립트로 트랜스파일 
