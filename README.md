@@ -397,3 +397,15 @@ https://d2.naver.com/helloworld/4268738
 ### Execution Context
 - 자바스크립트 코드가 실행되는 환경을 의미
 - 2가지 타입의 Execution Context: 1. Global Execution Context 2. Function Execution Context
+
+### Closure
+- 외부함수가 종료 되었음에도 외부함수의 변수를 scope chain을 통해 내부 함수에서 접근하는 함수
+- 캡슐화를 통해, private 변수를 흉내 낼 수 있다
+
+### IIFE
+- 즉시 실행 함수, 선언고 동시에 실행
+- 불필요한 전역 변수 선언하지 않아 전역 scope와 충돌하지 않음
+
+### implicit global
+- let, const, var 키워드 없이 선언된 변수
+- 전역 property에 속하게 됨
