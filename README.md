@@ -15,11 +15,11 @@ HTML, CSS, Javascript 등을 화면에 그래픽 형태로 출력하는 것
 
 ### 브라우저 렌더링 과정
 
-1. 브라우저는 특정 URI로 request를 보내고 해당 주소의 서버로부터 HTML, CSS 등 데이터를 response로 받음
-2. 브라우저에서 HTML 데이터는 HTML 파서가 파싱하여 DOM Tree를 만든다 CSS는 CSS 파서가 파싱하여 DOM Element와 함께 CSSOM Tree를 구성한다
+1. 브라우저는 특정 URI로 request를 보내고 해당 주소의 서버로부터 HTML, CSS 등 리소스들을 response로 받음
+2. 브라우저에서 HTML 데이터는 HTML 파서가 파싱하여 DOM Tree를 만들고 CSS는 CSS 파서가 파싱하여 CSSOM Tree를 구성한다
 3. 브라우저 렌더링 엔진은 DOM Tree와 CSSOM Tree로 Render Tree를 만든다
 4. Viewport에 따른 layout 계산하고
-5. Rendering Tree를 이용하여 브라우저에 그래픽으로 출력한다
+5. Rendering Tree를 paint 과정을 통해 브라우저에 그래픽으로 출력한다
 
 참고 링크 : https://d2.naver.com/helloworld/59361
 
