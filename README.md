@@ -1,6 +1,6 @@
 # Interview-Preparation
 
-Personal Interview Preparation for Frontend Position
+Personal Interview Preparation for Frontend Position (update needed)
 
 ### 참고 링크
 
