@@ -379,7 +379,62 @@ HTML, CSS, Javascript 등을 화면에 그래픽 형태로 출력하는 것
   - 성능: 불필요한 코드를 제거함으로써 메모리 사용량과 페이지 로드 속도를 개선할 수 있습니다.
   - 서버 비용 절감: 줄어든 데이터 사이즈로 서버 유지 비용을 줄일 수 있습니다.
 
-- Promise 사용해서 여러개의 비동기 처리 하는 방법 (all 이외)
+- Promise 사용해서 여러개의 비동기 처리 하는 방법
+
+  - 여러개의 Promise 순차적 처리
+
+    - 프로미스 체인을 만들어 이전 프로미스가 종료 후 다음 프로미스 실행
+
+  - 여러개의 프로미스 병렬적 처리
+    - Promise all을 사용하여 비동기 함수들을 병렬적으로 수행하고 모두 완료되면 종료
+    - Promise race를 사용하여 비동기 함수들을 병렬적으로 수행하고 첫번째 완료된 결과값을 반환
+
+  ```javascript
+  /* 프로미스 예시 */
+
+  function asyncTask1() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log("Async Task 1 Done", 1000);
+        resolve();
+      }, Math.random() * 1000);
+    });
+  }
+
+  function asyncTask2() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log("Async Task 2 Done", 1000);
+        resolve();
+      }, Math.random() * 2000);
+    });
+  }
+
+  function asyncTask3() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log("Async Task 3 Done", 1000);
+        resolve();
+      }, Math.random() * 3000);
+    });
+  }
+
+  /* 프로미스 체인 (비동기 함수 순차적 처리) */
+  asyncTask1()
+    .then(() => asyncTask2())
+    .then(() => asyncTask3());
+
+  /* 프로미스 all (비동기 함수 병렬적 처리) */
+  Promise.all([asyncTask1(), asyncTask2(), asyncTask3()]).then((results) =>
+    console.log("All promise finished", results)
+  );
+
+  /* 프로미스 race (비동기 함수 병렬적 실행 후 최초 완료 Promise 결과 값 반환) */
+  Promise.race([asyncTask1(), asyncTask2(), asyncTask3()]).then((result) =>
+    console.log("First promise finished", result)
+  );
+  ```
+
 - typeof null & typeof undefined 의 결과는? (이유 설명 가능하면 좋음)
 - cra로 seo를 할 수 있는 방법 (노머스 테크 블로그 참고)
 - 코딩 테스트 준비 라이브 코딩 테스트 예상 문제를 보거나 자주 사용되는 UI를 만들어보는 연습해보기
