@@ -436,5 +436,10 @@ HTML, CSS, Javascript 등을 화면에 그래픽 형태로 출력하는 것
   ```
 
 - typeof null & typeof undefined 의 결과는? (이유 설명 가능하면 좋음)
+
+  - typeof undefined의 결과 > undefined
+  - typeof null의 결과 > object
+    - 초기 버전 자바스크립트에서 null은 object였음, 이후 null의 타입이 null로 개선, 변경되었으나 이미 많은 곳에서 이것이 object인 것으로 적용되어있기 때문에 호환성을 위해 바꿀 수 없는 상황
+
 - cra로 seo를 할 수 있는 방법 (노머스 테크 블로그 참고)
 - 코딩 테스트 준비 라이브 코딩 테스트 예상 문제를 보거나 자주 사용되는 UI를 만들어보는 연습해보기
