@@ -1,7 +1,5 @@
 # Interview-Preparation
 
-Personal Interview Preparation for Web Frontend Position (update needed)
-
 ### 참고 링크
 
 - https://realmojo.tistory.com/300
