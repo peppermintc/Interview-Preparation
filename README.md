@@ -7,10 +7,6 @@
 - https://taegon.kim/archives/5770
 - https://sunnykim91.tistory.com/121
 
-### 렌더링
-
-HTML, CSS, Javascript 등을 화면에 그래픽 형태로 출력하는 것
-
 ### 브라우저 렌더링 과정
 
 1. 브라우저는 특정 URI로 request를 보내고 해당 주소의 서버로부터 HTML, CSS 등 리소스들을 response로 받음
