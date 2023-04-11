@@ -263,9 +263,9 @@
 - 레이아웃을 편하게 잡기 위한 CSS 속성
 - 컨테이너와 아이템 구성으로 레이아웃을 지정한다
 
-### ES6
+### ES6 문법
 
-- ES6에서 바뀐 것 Template Literal, Spread Operator, 화살표 함수, Class
+- 새로운 것 Template Literal, Spread Operator, 화살표 함수, Class
 
 ### Babel
 
